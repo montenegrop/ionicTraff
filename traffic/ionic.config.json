@@ -1,0 +1,7 @@
+{
+  "name": "traffic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
