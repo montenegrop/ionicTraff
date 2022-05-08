@@ -19,8 +19,5 @@
   "bugs": {
     "url": "https://github.com/montenegrop/ionicTraff/issues"
   },
-  "homepage": "https://github.com/montenegrop/ionicTraff#readme",
-  "dependencies": {
-    "@ionic/cli": "^6.19.0"
-  }
+  "homepage": "https://github.com/montenegrop/ionicTraff#readme"
 }
