@@ -10,7 +10,6 @@ import ExploreContainer from '../components/ExploreContainer'
 import './Home.css'
 
 // redux:
-
 import { useDispatch, useSelector } from 'react-redux'
 import { getSomeWebSuccess } from '../state/reducers/someWebState'
 import { RootState } from '..'

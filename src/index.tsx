@@ -4,7 +4,7 @@ import App from './App'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import reportWebVitals from './reportWebVitals'
 
-/* redux and redux-saga */
+// redux and redux-saga
 import { Provider } from 'react-redux'
 import createSagaMiddleware from 'redux-saga'
 import { configureStore } from '@reduxjs/toolkit'
