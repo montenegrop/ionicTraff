@@ -22,15 +22,6 @@ import '@ionic/react/css/display.css'
 /* Theme variables */
 import './theme/variables.css'
 
-/* redux and redux-saga */
-import { Provider } from 'react-redux'
-import createSagaMiddleware from 'redux-saga'
-
-const saga = createSagaMiddleware()
-// const store = configureStore({
-
-// })
-
 setupIonicReact()
 
 const App: React.FC = () => (
