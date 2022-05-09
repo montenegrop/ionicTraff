@@ -13,10 +13,15 @@ import './Home.css'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { getSomeWebSuccess } from '../state/reducers/someWebState'
+import { RootState } from '..'
 
 const Home: React.FC = () => {
-    const someWebLoading = useSelector((state: any) => state.someWebs.isLoading)
-    const someWebResult = useSelector((state: any) => state.someWebs.resultado)
+    const someWebLoading = useSelector(
+        (state: RootState) => state.someWebs.isLoading
+    )
+    const someWebResult = useSelector(
+        (state: RootState) => state.someWebs.resultado
+    )
     const dispatch = useDispatch()
 
     return (
@@ -33,7 +38,9 @@ const Home: React.FC = () => {
                     </IonToolbar>
                 </IonHeader>
                 <ExploreContainer />
-                <IonButton onClick={() => dispatch(getSomeWebSuccess(99))}>
+                <IonButton
+                    onClick={() => dispatch(getSomeWebSuccess({ time: 98 }))}
+                >
                     Boton
                 </IonButton>
                 <p>{someWebResult}</p>
