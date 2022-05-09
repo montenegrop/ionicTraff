@@ -11,8 +11,12 @@ import './Home.css'
 
 // redux:
 import { useDispatch, useSelector } from 'react-redux'
-import { getSomeWebSuccess } from '../state/reducers/someWebState'
+import {
+    getSomeWebFetch,
+    getSomeWebSuccess,
+} from '../state/reducers/someWebState'
 import { RootState } from '..'
+import { useEffect } from 'react'
 
 const Home: React.FC = () => {
     const someWebLoading = useSelector(
@@ -22,6 +26,11 @@ const Home: React.FC = () => {
         (state: RootState) => state.someWebs.resultado
     )
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        alert(someWebResult)
+        console.log(someWebResult, 888)
+    }, [someWebResult])
 
     return (
         <IonPage>
@@ -37,12 +46,13 @@ const Home: React.FC = () => {
                     </IonToolbar>
                 </IonHeader>
                 <ExploreContainer />
-                <IonButton
-                    onClick={() => dispatch(getSomeWebSuccess({ time: 98 }))}
-                >
+                <IonButton onClick={() => dispatch(getSomeWebSuccess(99))}>
                     Boton
                 </IonButton>
-                <p>{someWebResult}</p>
+                <IonButton onClick={() => dispatch(getSomeWebFetch())}>
+                    saga
+                </IonButton>
+                {/* <p>{someWebResult}</p> */}
             </IonContent>
         </IonPage>
     )

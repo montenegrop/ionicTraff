@@ -11,6 +11,7 @@ import { configureStore } from '@reduxjs/toolkit'
 
 // reducers
 import someWebReducer from './state/reducers/someWebState'
+import someWebSaga from './state/sagas/someWebSaga'
 
 const saga = createSagaMiddleware()
 const store = configureStore({
@@ -19,6 +20,7 @@ const store = configureStore({
     },
     middleware: [saga],
 })
+saga.run(someWebSaga)
 
 ReactDOM.render(
     <Provider store={store}>
@@ -37,7 +39,7 @@ serviceWorkerRegistration.unregister()
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 
 // corregir:
-reportWebVitals(console.log)
+reportWebVitals()
 
 // redux
 export type RootState = ReturnType<typeof store.getState>

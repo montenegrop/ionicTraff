@@ -1,18 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+interface someWebState {
+    resultado: any
+    isLoading: Boolean
+}
+
+const someWebInitialState: someWebState = {
+    resultado: 0,
+    isLoading: false,
+}
+
 export const someWebSlice = createSlice({
     name: 'someWebs',
-    initialState: {
-        resultado: 0,
-        isLoading: true,
-    },
+    initialState: someWebInitialState,
     reducers: {
         getSomeWebFetch: (state) => {
             state.isLoading = true
         },
         getSomeWebSuccess: (state, action) => {
-            state.resultado = action.payload.time
-            console.log(action)
+            console.log('action:', action)
+            state.resultado = action.payload.Countries ?? action.payload
             state.isLoading = false
         },
         getSomeWebFailure: (state) => {
