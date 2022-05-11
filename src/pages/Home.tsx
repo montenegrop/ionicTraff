@@ -1,26 +1,61 @@
-import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Home.css';
+import {
+    IonButton,
+    IonContent,
+    IonHeader,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+} from '@ionic/react'
+import ExploreContainer from '../components/ExploreContainer'
+import './Home.css'
+
+// redux:
+import { useDispatch, useSelector } from 'react-redux'
+import {
+    getSomeWebFetch,
+    getSomeWebSuccess,
+} from '../state/reducers/someWebState'
+import { RootState } from '..'
+import { useEffect } from 'react'
 
 const Home: React.FC = () => {
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Blank</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer  />
-        <IonButton>Boton</IonButton>
-      </IonContent>
-    </IonPage>
-  );
-};
+    const someWebLoading = useSelector(
+        (state: RootState) => state.someWebs.isLoading
+    )
+    const someWebResult = useSelector(
+        (state: RootState) => state.someWebs.resultado
+    )
+    const dispatch = useDispatch()
 
-export default Home;
+    useEffect(() => {
+        alert(someWebResult)
+        console.log(someWebResult, 888)
+    }, [someWebResult])
+
+    return (
+        <IonPage>
+            <IonHeader>
+                <IonToolbar>
+                    <IonTitle>{someWebLoading}</IonTitle>
+                </IonToolbar>
+            </IonHeader>
+            <IonContent fullscreen>
+                <IonHeader collapse="condense">
+                    <IonToolbar>
+                        <IonTitle size="large">Blank</IonTitle>
+                    </IonToolbar>
+                </IonHeader>
+                <ExploreContainer />
+                <IonButton onClick={() => dispatch(getSomeWebSuccess(99))}>
+                    Boton
+                </IonButton>
+                <IonButton onClick={() => dispatch(getSomeWebFetch())}>
+                    saga
+                </IonButton>
+                {/* <p>{someWebResult}</p> */}
+            </IonContent>
+        </IonPage>
+    )
+}
+
+export default Home
