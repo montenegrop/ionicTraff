@@ -21,7 +21,7 @@ import '@ionic/react/css/display.css'
 
 /* Theme variables */
 import './theme/variables.css'
-import GridPage from './pages/gridPage'
+import GridPage from './pages/GridPage'
 
 setupIonicReact()
 
