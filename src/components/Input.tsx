@@ -63,7 +63,6 @@ export const InputExamples: React.FC = () => {
                             onIonChange={(e) => setText2(e.detail.value!)}
                         ></IonInput>
                         <IonInput
-                            defaultValue={'k'}
                             clearOnEdit={true}
                             maxlength={1}
                             value={text3}
