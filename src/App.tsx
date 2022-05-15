@@ -21,6 +21,8 @@ import '@ionic/react/css/display.css'
 
 /* Theme variables */
 import './theme/variables.css'
+import GridPage from './pages/GridPage'
+import InputPage from './pages/InputPage'
 
 setupIonicReact()
 
@@ -33,6 +35,12 @@ const App: React.FC = () => (
                 </Route>
                 <Route exact path="/">
                     <Redirect to="/home" />
+                </Route>
+                <Route exact path="/grid">
+                    <GridPage></GridPage>
+                </Route>
+                <Route exact path="/input">
+                    <InputPage></InputPage>
                 </Route>
             </IonRouterOutlet>
         </IonReactRouter>
