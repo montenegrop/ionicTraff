@@ -6,9 +6,9 @@ const GridPage: React.FC = () => {
     const cssIonGridCustom = { '--ion-grid-padding': '0px' }
 
     const primerRenglon = ['a', 'a', 'a', 'a', 'a', 'a']
-    const segundoRenglon = ['a', 'a', 'a', 'a', 'a', 'a']
-    const tercerRenglon = ['a', 'a', 'a', 'a', 'a', 'a']
-    const cuartoRenglon = ['a', 'a', 'a', 'a', 'a', 'a']
+    const segundoRenglon = ['a', 'a', 'a', 'a', 'a', 'b']
+    const tercerRenglon = ['a', 'a', 'a', 'a', 'a', 'c']
+    const cuartoRenglon = ['a', 'a', 'a', 'a', 'a', 'd']
 
     return (
         <IonContent>
@@ -21,21 +21,21 @@ const GridPage: React.FC = () => {
                     ))}
                 </IonRow>
                 <IonRow>
-                    {primerRenglon.map((col) => (
+                    {segundoRenglon.map((col) => (
                         <IonCol>
                             <IonButton>{col}</IonButton>
                         </IonCol>
                     ))}
                 </IonRow>
                 <IonRow>
-                    {primerRenglon.map((col) => (
+                    {tercerRenglon.map((col) => (
                         <IonCol>
                             <IonButton>{col}</IonButton>
                         </IonCol>
                     ))}
                 </IonRow>
                 <IonRow>
-                    {primerRenglon.map((col) => (
+                    {cuartoRenglon.map((col) => (
                         <IonCol>
                             <IonButton>{col}</IonButton>
                         </IonCol>
