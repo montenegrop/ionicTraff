@@ -28,8 +28,8 @@ const Home: React.FC = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        alert(someWebResult)
-        console.log(someWebResult, 888)
+        console.log(someWebResult)
+        alert(someWebResult.data?.map((element: any) => element.id))
     }, [someWebResult])
 
     return (
