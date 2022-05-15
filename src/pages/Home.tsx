@@ -29,6 +29,7 @@ const Home: React.FC = () => {
 
     useEffect(() => {
         console.log(someWebResult)
+        alert(someWebResult.data?.map((element: any) => element.id))
     }, [someWebResult])
 
     return (

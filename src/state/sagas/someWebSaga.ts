@@ -1,10 +1,10 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 import { getSomeWebSuccess } from '../reducers/someWebState'
 
+const api_uri = process.env.REACT_APP_API || ''
+
 function* workGetSomeWebsiteFetch(): any {
-    const someWebs = yield call(() =>
-        fetch('https://api.covid19api.com/summary')
-    )
+    const someWebs = yield call(() => fetch(api_uri))
     const fommatedSomeWebs = yield someWebs.json()
     yield put(getSomeWebSuccess(fommatedSomeWebs))
 }
