@@ -1,14 +1,14 @@
 import { IonGrid, IonRow, IonCol, IonContent } from '@ionic/react'
 
 interface ContainerProps {
-    letras: string[]
+    cols: string[]
 }
 
-export const GridExample: React.FC<ContainerProps> = ({ letras }) => {
+export const GridRow: React.FC<ContainerProps> = ({ cols, children }) => {
     return (
         <IonRow>
-            {letras.map((letra) => (
-                <IonCol>{letra}</IonCol>
+            {cols.map((col) => (
+                <IonCol>{children}</IonCol>
             ))}
         </IonRow>
     )

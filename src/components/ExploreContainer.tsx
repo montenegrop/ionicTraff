@@ -1,13 +1,11 @@
 import './ExploreContainer.css'
 
-interface ContainerProps {
-    letra: Number
-}
+interface ContainerProps {}
 
-const ExploreContainer: React.FC<ContainerProps> = (letra) => {
+const ExploreContainer: React.FC<ContainerProps> = () => {
     return (
         <div className="container">
-            <strong>Ready to create an app? {letra}</strong>
+            <strong>Ready to create an app?</strong>
             <p>
                 Start with Ionic{' '}
                 <a
