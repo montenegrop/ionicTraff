@@ -52,6 +52,7 @@ const Home: React.FC = () => {
                 <IonButton onClick={() => dispatch(getSomeWebFetch())}>
                     saga
                 </IonButton>
+                <IonButton href="/input">input</IonButton>
                 {/* <p>{someWebResult}</p> */}
             </IonContent>
         </IonPage>
